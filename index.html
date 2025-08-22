@@ -7,16 +7,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Add Babel Standalone to transpile JSX in the browser -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="importmap">
+    <!-- 
+      Corrected Import Map:
+      - Using stable React v18.
+      - Explicitly mapping "react-dom/client" which is required by the script.
+      This fixes the blank screen issue on static hosts.
+    -->
+    <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.1.1/",
-    "react": "https://esm.sh/react@^19.1.1",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.1/"
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/"
   }
 }
 </script>
-</head>
+  </head>
   <body class="bg-gray-900 text-gray-100">
     <div id="root"></div>
     <!-- Update script type to text/babel for in-browser transpilation -->
