@@ -1,0 +1,5 @@
+{
+  "name": "V380 Pro Web Viewer Guide",
+  "description": "An instructional guide and web viewer to help you display a V380 Pro compatible CCTV camera feed on a web page by finding and using its web-compatible streaming URL.",
+  "requestFramePermissions": []
+}
