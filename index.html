@@ -9,15 +9,17 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- 
       Corrected Import Map:
-      - Using stable React v18.
-      - Explicitly mapping "react-dom/client" which is required by the script.
-      This fixes the blank screen issue on static hosts.
+      - Using a consistent version of React (18.2.0) for all imports.
+      - Explicitly mapping "react/jsx-runtime" to prevent version mismatches
+        that cause rendering errors (React Error #31).
+      This fixes the runtime error and allows the app to render.
     -->
     <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@18.2.0",
     "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
     "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
     "react/": "https://esm.sh/react@^19.1.1/"
   }
